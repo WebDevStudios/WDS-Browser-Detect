@@ -76,4 +76,4 @@ function wds_client_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'wds_client_body_classes' );
 ```
-For more examples, checkout the source code!
+For more examples, checkout the [source code](https://github.com/WebDevStudios/WDS-Browser-Detect/blob/master/wds-browser-detect.php)!
