@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: WebDevStudios Browser Detect
+ * Plugin Name: WDS Browser Detect
  * Plugin URI: http://webdevstudios.com
  * Description: A lightweight plugin to detect browsers, operating systems, and devices.
  * Author: WebDevStudios
- * Author URI: http://webdevstudios.com
+ * Author URI: https://github.com/WebDevStudios/WDS-Browser-Detect
  * Version: 1.0.0
  * License: GPLv2
  */
@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Include our detection class
-if ( file_exists( dirname( __FILE__ ) . '/lib/Browser.php' ) ) {
+// Include the browser detection engine
+if ( ! class_exists( 'Browser' ) && file_exists( dirname( __FILE__ ) . '/lib/Browser.php' ) ) {
 	require_once dirname( __FILE__ ) . '/lib/Browser.php';
 }
 
