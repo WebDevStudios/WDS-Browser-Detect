@@ -7,6 +7,9 @@ Powered by a (slightly) modified version of Chris Schuld's [https://github.com/c
 * Download, unzip, and place into you WordPress `/plugins/` directory.
 * Activate via the WordPress plugin manager.
 
+## Caveats
+If you're running any kind of page caching, this plugin will not work correctly. The first person to hit your site might be on a mobile device, and then cache will be generated (based on a mobile device). The next visitor my be using a desktop browser and see something very different!
+
 ## Example Usage
 
 These helper functions are intended to be used in conditionals and return either `TRUE` or `FALSE`. Basic usage looks like:
