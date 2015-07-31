@@ -5,7 +5,7 @@
  * Description: A lightweight plugin to detect browsers, operating systems, and devices.
  * Author: WebDevStudios
  * Author URI: https://github.com/WebDevStudios/WDS-Browser-Detect
- * Version: 1.0.0
+ * Version: 1.1
  * License: GPLv2
  */
 
@@ -47,7 +47,45 @@ function wds_browser_is_ie( $version = '' ) {
 	}
 
 	// If we are passing the $version, detect the browser and version
-	if ( intval( $version ) >= $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_IE ) {
+	if ( intval( $version ) == $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_IE ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
+ * Microsoft Edge?
+ *
+ * Default usage:
+ *
+ * if ( wds_browser_is_edge() ) {
+ *    <!-- some code here -->
+ * }
+ *
+ * Detect version:
+ *
+ * if ( wds_browser_is_edge( '12' ) ) {
+ *    <!-- some code here -->
+ * }
+ *
+ * Note: The version number detection has been rounded down to the nearest whole number.
+ * e.g.; 12.12525 = 12.
+ *
+ * @param  string   $version  The browser version.
+ * @return boolean
+ */
+function wds_browser_is_edge( $version = '' ) {
+
+	$browser = new Browser();
+
+	// If we're not passing the $version, detect the browser
+	if ( empty( $version ) && $browser->getBrowser() == Browser::BROWSER_EDGE ) {
+		return true;
+	}
+
+	// If we are passing the $version, detect the browser and version
+	if ( intval( $version ) == $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_EDGE ) {
 		return true;
 	}
 
@@ -82,7 +120,7 @@ function wds_browser_is_chrome( $version = '' ) {
 	}
 
 	// If we are passing the $version, detect the browser and version
-	if ( intval( $version ) >= $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_CHROME ) {
+	if ( intval( $version ) == $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_CHROME ) {
 		return true;
 	}
 
@@ -117,7 +155,7 @@ function wds_browser_is_safari( $version = '' ) {
 	}
 
 	// If we are passing the $version, detect the browser and version
-	if ( intval( $version ) >= $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_SAFARI ) {
+	if ( intval( $version ) == $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_SAFARI ) {
 		return true;
 	}
 
@@ -152,7 +190,7 @@ function wds_browser_is_firefox( $version = '' ) {
 	}
 
 	// If we are passing the $version, detect the browser and version
-	if ( intval( $version ) >= $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_FIREFOX ) {
+	if ( intval( $version ) == $browser->getVersion() && $browser->getBrowser() == Browser::BROWSER_FIREFOX ) {
 		return true;
 	}
 

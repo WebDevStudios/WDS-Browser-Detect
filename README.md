@@ -8,11 +8,88 @@ Powered by a (slightly) modified version of Chris Schuld's [https://github.com/c
 * Activate via the WordPress plugin manager.
 
 ## Caveats
-If you're running any kind of page caching, this plugin will not work correctly. The first person to hit your site might be on a mobile device, and then cache will be generated (based on a mobile device). The next visitor my be using a desktop browser and see something very different!
+This PHP script uses server side user agent sniffing. If you're running any kind of page caching, this plugin will not work correctly. The first person to hit your site might be on a mobile device, and then cache will be generated (based on a mobile device). The next visitor my be using a desktop browser - and see something very different!
+
+## Changelog
+
+* 1.1 - Add support for Microsoft Edge & Windows 10
+* 1.0 - Initial release
+
+## Available Functions
+
+Browsers
+
+```php
+wds_browser_is_ie()
+```
+
+```php
+wds_browser_is_edge()
+```
+
+```php
+wds_browser_is_chrome()
+```
+
+```php
+wds_browser_is_safari()
+```
+
+```php
+wds_browser_is_firefox()
+```
+
+```php
+wds_browser_is_facebook()
+```
+
+```php
+wds_browser_is_aol()
+```
+
+Devices
+
+```php
+wds_browser_is_mobile()
+```
+
+```php
+wds_browser_is_tablet()
+```
+
+```php
+wds_browser_is_handheld()
+```
+
+```php
+wds_browser_is_robot()
+```
+
+Operating Systems
+
+```php
+wds_browser_is_windows()
+```
+
+```php
+wds_browser_is_osx()
+```
+
+```php
+wds_browser_is_linux()
+```
+
+```php
+wds_browser_is_ios()
+```
+
+```php
+wds_browser_is_anroid()
+```
 
 ## Example Usage
 
-These helper functions are intended to be used in conditionals and return either `TRUE` or `FALSE`. Basic usage looks like:
+These helper functions are intended to be used in conditionals and returns a BOOLEAN either `TRUE` or `FALSE`. Basic usage looks like:
 
 ```php
 if ( wds_browser_is_ie() ) {
@@ -65,7 +142,7 @@ function wds_client_body_classes( $classes ) {
 
 	if ( wds_browser_is_ie( '9' ) ) {
 		$classes[] = 'ie9';
-	}	
+	}
 
 	if ( wds_browser_is_mobile() ) {
 		$classes[] = 'phone';
@@ -73,7 +150,7 @@ function wds_client_body_classes( $classes ) {
 
 	if ( wds_browser_is_tablet() ) {
 		$classes[] = 'tablet';
-	}	
+	}
 
 	return $classes;
 }
