@@ -8,7 +8,9 @@ Powered by a (slightly) modified version of Chris Schuld's [https://github.com/c
 * Activate via the WordPress plugin manager.
 
 ## Caveats
-This PHP script uses server side user agent sniffing. If you're running any kind of page caching, this plugin will not work correctly. The first person to hit your site might be on a mobile device, and then cache will be generated (based on a mobile device). The next visitor my be using a desktop browser - and see something very different!
+This PHP script uses server side User Agent sniffing - which is not always relaiable. If you're trying to detect browser capabilities, use [http://modernizr.com/](Modernizer).
+
+Also, If you're running any kind of page caching, this plugin will not work correctly. The first person to hit your site might be on a mobile device, and then cache will be generated (based on a mobile device). The next visitor my be using a desktop browser - and see something very different!
 
 ## Changelog
 
